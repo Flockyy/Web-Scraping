@@ -1,4 +1,4 @@
-# Scrapy settings for ebayScraping project
+# Scrapy settings for thomannScraping project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -46,13 +46,13 @@ RANDOMIZE_DOWNLOAD_DELAY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'ebayScraping.middlewares.EbayscrapingSpiderMiddleware': 543,
+#    'thomannScraping.middlewares.thomannscrapingSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'ebayScraping.middlewares.EbayscrapingDownloaderMiddleware': 543,
+#    'thomannScraping.middlewares.thomannscrapingDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -64,7 +64,7 @@ RANDOMIZE_DOWNLOAD_DELAY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'ebayScraping.pipelines.EbayscrapingPipeline': 300,
+#    'thomannScraping.pipelines.thomannscrapingPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -92,7 +92,7 @@ RANDOMIZE_DOWNLOAD_DELAY = True
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'thomannScraping.pipelines.MongoPipeline': 300,
+    'ebayScraping.pipelines.MongoPipeline': 300,
 }
 MONGO_URI = 'mongodb+srv://fabgrall:admin@cluster0.2saqp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 MONGO_DATABASE = 'Audio'

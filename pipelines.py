@@ -6,7 +6,7 @@ import pymongo
 
 class MongoPipeline(object):
 
-    collection_name = 'Speakers'
+    collection_name = 'Headphones'
 
     def __init__(self, mongo_uri, mongo_db):
         self.mongo_uri = mongo_uri
