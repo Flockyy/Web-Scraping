@@ -9,6 +9,7 @@ from itemloaders.processors import TakeFirst, MapCompose, Join
 
 class ThomannItem(scrapy.Item):
     name = scrapy.Field()
+    make = scrapy.Field()
     observer = scrapy.Field()
     sell_rank = scrapy.Field()
     price = scrapy.Field()

@@ -17,7 +17,15 @@ class ThomannSpider(CrawlSpider):
     
     def parse(self, response):
         item = ThomannItem()
-        item['name'] = Selector(response).xpath('//h1[@class="fx-product-headline product-title__title"]/text()').extract()[0]
+        
+        item['name'] = Selector(response).xpath('//li[@class="stages__item stages__item--last"]/span/text()').extract()
+        item['name'] = ''.join(c for c in item['name'] if c not in '\r\t\n')
+        item['name'] = item['name'].strip()
+        
+        item['make'] = Selector(response).xpath('//li[@class="stages__item"][5]/a/text()').extract()
+        item['make'] = ''.join(c for c in item['make'] if c not in '\r\t\n')
+        item['make'] = item['make'].strip()
+        
         item['observer'] = Selector(response).xpath('//span[@class="meta-box-value"][1]/text()').extract()[0]
         item['observer'] = ''.join(c for c in item['observer'] if c not in '\r\t\n')
         item['observer'] = item['observer'].strip()
@@ -33,4 +41,5 @@ class ThomannSpider(CrawlSpider):
         item['features'] = Selector(response).xpath('//div[@class="text-original js-prod-text-original"]/ul/li/span/text()').extract()
         item['rating'] = Selector(response).xpath('//div[@class="rating"]/span/text()').extract()
         item['nb_evaluation'] = Selector(response).xpath('//div[@class="product-reviews-header"]/div/h2/span/text()').extract()
+
         yield item
