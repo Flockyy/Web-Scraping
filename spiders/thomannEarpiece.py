@@ -4,7 +4,7 @@ from scrapy.spiders import CrawlSpider, Rule
 from scrapy.selector import Selector
 from ebayScraping.items import ThomannItem
 
-class ThomannearpieceSpider(CrawlSpider):
+class ThomannEarpieceSpider(CrawlSpider):
     name = 'thomannEarpiece'
     allowed_domains = ['thomann.de']
     start_urls = ['https://www.thomann.de/fr/ecouteurs_in_ear.html?ls=100&gk=ZUKOEH',
